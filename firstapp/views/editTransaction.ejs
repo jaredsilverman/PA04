@@ -1,0 +1,27 @@
+<table class="table table-bordered table-striped">
+  <thead></thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= item.description %>
+      </td>
+      <td>
+        <%= item.category %>
+      </td>
+      <td>
+        <%= item.amount %>
+      </td>
+      <td>
+        <%= item.date.toDateString() %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<form method="post" action="/transaction/updateTransaction">
+  <input type="hidden" name="itemId" value="<%= item._id %>">
+  <input type="text" name="description" placeholder="description"><br>
+  <input type="text" name="category" placeholder="category"><br>
+  <input type="text" name="amount" placeholder="amount"><br>
+  <input type="text" name="date" placeholder="mm/dd/yyyy"><br>
+  <input type="submit" value="store">
+</form>
